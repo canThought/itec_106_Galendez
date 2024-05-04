@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Fibonacci </title>
+    </head>
+    <body>
+        <script>
+ function fibonacci(){
+    let terms;
+do {
+    terms = prompt("Enter the number of terms in the sequence: ");
+    if (isNaN(terms) || terms < 1 || terms >= 100) {
+        alert("Please enter a valid integer number greater than 0 and less than 100.");
+    }
+} while (isNaN(terms) || terms < 1 || terms >= 100);
+
+let current = 0;
+let previous = 1;
+
+let fibonacciSeries = '';
+
+for (let i = 1; i <= parseInt(terms); i++) {
+    fibonacciSeries += current + ' ';
+    const next = current + previous;
+    current = previous;
+    previous = next;
+}
+
+alert(`Fibonacci series: ${fibonacciSeries}`);
+
+}
+fibonacci();
+        </script>
+    </body>
+
+</html>
